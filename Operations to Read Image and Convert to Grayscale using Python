@@ -1,0 +1,20 @@
+import cv2
+import numpy as np
+from google.colab.patches import cv2_imshow
+
+kernel = np.ones((5,5), np.uint8)
+print(kernel)
+
+path = "/content/hello.jfif"  
+
+img = cv2.imread(path)
+
+
+if img is not None:
+    # Convert the image to grayscale
+    imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    # Display the grayscale image
+    cv2_imshow(imgGray)
+else:
+    print("Error: Image not found or unable to read.")
